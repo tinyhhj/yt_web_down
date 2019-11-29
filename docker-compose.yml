@@ -1,9 +1,11 @@
 version: '3'
 
 services:
-  application:
+  yt_web_down:
     build: .
     ports:
       - 8082:8082
     networks:
       - piano
+networks:
+  piano:
