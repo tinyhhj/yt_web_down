@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/down" method="post">
+        <input id="add" type="button" value="+">
+        <button type="submit">download</button>
+    </form>
+</body>
+<script>
+    const addBtn = document.querySelector('#add');
+        addBtn.addEventListener('click',e=>{
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = 'videos';
+        document.forms[0].append(input);
+    });
+</script>
+</html>
