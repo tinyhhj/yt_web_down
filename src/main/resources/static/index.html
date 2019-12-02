@@ -7,7 +7,7 @@
 <body>
     <form action="/yt/down" method="post">
         <input id="add" type="button" value="+">
-        <button type="submit">download</button>
+        <button id="submit" type="submit">download</button>
     </form>
 </body>
 <script>
@@ -17,6 +17,23 @@
         input.type = 'text';
         input.name = 'videos';
         document.forms[0].append(input);
+    });
+    const submit = document.querySelector('#submit');
+    submit.addEventListener('click', e=> {
+        document.querySelectorAll('form input[type="text"]')
+            .forEach(e=>{
+            try{
+                    url = new URL(e.value);
+                    for( var query of url.searchParams) {
+                        if(query[0] === 'v') {
+                            e.value = query[1];
+                            return;
+                        }
+                    }
+                } catch(e) {
+
+                }
+        });
     });
 </script>
 </html>
