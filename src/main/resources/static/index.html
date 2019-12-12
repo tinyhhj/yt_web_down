@@ -30,6 +30,10 @@
                             return;
                         }
                     }
+                    if( url.origin.toUpperCase().startsWith('https://youtu.be'.toUpperCase())) {
+                        e.value = url.pathname.substr(1);
+                        return;
+                    }
                 } catch(e) {
 
                 }
